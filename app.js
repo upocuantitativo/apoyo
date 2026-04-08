@@ -5,8 +5,8 @@
 // - Translation via Google Translate widget.
 
 const SPECIALIST_EMAIL = "especialista@sevilla.org";
-const LLM_ENDPOINT = "https://text.pollinations.ai/";
-const LLM_MODEL = "openai-large"; // free, high-quality
+const LLM_ENDPOINT = "https://text.pollinations.ai/openai";
+const LLM_MODEL = "openai"; // free, OpenAI-compatible chat
 
 // Languages: native name + English label.
 const LANGS = [
@@ -316,11 +316,20 @@ async function askLLM(userText) {
       model: LLM_MODEL,
       messages,
       temperature: 0.6,
-      private: true
+      private: true,
+      referrer: "apoyo-upo"
     })
   });
   if (!res.ok) throw new Error("LLM HTTP " + res.status);
-  return (await res.text()).trim();
+  const raw = await res.text();
+  // OpenAI-compatible JSON; fallback to plain text
+  try {
+    const j = JSON.parse(raw);
+    if (j.choices && j.choices[0]) {
+      return (j.choices[0].message?.content || j.choices[0].text || "").trim();
+    }
+  } catch (_) {}
+  return raw.trim();
 }
 
 async function handleUserQuery(text) {
