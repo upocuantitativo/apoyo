@@ -130,6 +130,12 @@ function goHomeSpanish() {
 function renderMenu() {
   const grid = document.getElementById("menu-grid");
   grid.innerHTML = "";
+  // Free chat card FIRST
+  const free = document.createElement("button");
+  free.className = "card card-highlight";
+  free.innerHTML = `<span class="icon">💬</span><strong>Hacer una pregunta libre</strong><small>Habla con el asistente IA: te escucha con empatía y busca información para ti</small>`;
+  free.addEventListener("click", () => openChatFresh());
+  grid.appendChild(free);
   KB.categories.forEach(cat => {
     const c = document.createElement("button");
     c.className = "card";
@@ -137,13 +143,7 @@ function renderMenu() {
     c.addEventListener("click", () => openCategory(cat));
     grid.appendChild(c);
   });
-  // Free chat card
-  const free = document.createElement("button");
-  free.className = "card";
-  free.innerHTML = `<span class="icon">💬</span><strong>Hacer una pregunta libre</strong><small>Habla con el asistente IA: te escucha con empatía y busca información para ti</small>`;
-  free.addEventListener("click", () => openChatFresh());
-  grid.appendChild(free);
-  // Documentation card
+  // Documentation card last
   const docs = document.createElement("button");
   docs.className = "card";
   docs.innerHTML = `<span class="icon">📚</span><strong>Documentación</strong><small>Consulta y descarga toda la documentación clasificada por tema</small>`;

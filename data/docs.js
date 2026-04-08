@@ -2,14 +2,6 @@
 // Estructura: categoría legible -> { folder, files: [{name, file}] }
 window.DOCS = [
   {
-    title: "Marco teórico",
-    icon: "📖",
-    folder: "1ER APARTADO MARCO TEORICO",
-    files: [
-      { name: "Bibliografía del primer apartado", file: "BIBLIOGRAFÍA DEL PRIMER APARTADO_.docx" }
-    ]
-  },
-  {
     title: "Barreras en la detección",
     icon: "🔍",
     folder: "BARRERAS EN LA DETECCIÓN",
