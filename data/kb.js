@@ -103,9 +103,63 @@ window.KB = {
       items: [
         {
           q: "¿En qué sectores hay más oportunidades de empleo?",
-          keywords: ["empleo", "trabajo", "trabajar", "sector", "oportunidades"],
-          a: "En España actualmente los sectores con mayor demanda de personal son: hostelería y restauración, cuidados a personas mayores y dependientes, servicio doméstico, agricultura de temporada, construcción, logística y limpieza. Para muchas ofertas regularizadas se necesita permiso de trabajo, pero también existen programas de formación e inserción específicos para mujeres en situación de vulnerabilidad. (El usuario indicó que se añadirá un documento adicional sobre empleo: cuando esté disponible se ampliará esta sección).",
-          source: "Sectores con más oportunidades de empleo (documento del expediente)"
+          keywords: ["empleo", "trabajo", "trabajar", "sector", "oportunidades", "demanda"],
+          a: "En España y Andalucía los sectores con mayor demanda son: hostelería y restauración, cuidados a personas mayores y dependientes, servicio doméstico, agricultura de temporada, construcción, logística, limpieza y atención sanitaria. Para muchas ofertas se necesita permiso de trabajo, pero existen programas específicos de formación e inserción para personas en situación de vulnerabilidad y para ocupaciones de difícil cobertura.",
+          source: "Sectores con más oportunidades de empleo; Guía Interactiva de Empleo para Migrantes en Andalucía (Junta de Andalucía / SAE)"
+        },
+        {
+          q: "¿Qué formación gratuita puedo hacer si estoy en paro?",
+          keywords: ["formacion", "cursos", "estudiar", "sae", "sepe", "gratis", "formarme"],
+          a: "Tienes varias vías de formación gratuita:\n\n• **Cursos del SAE (Servicio Andaluz de Empleo):** Formación Profesional para el Empleo dirigida a personas desempleadas inscritas en el SAE. Algunos permiten obtener un certificado de profesionalidad oficial. El personal de la oficina te ayuda a buscar cursos y a inscribirte aunque no tengas el nivel educativo requerido.\n• **Cursos del SEPE (Servicio Público de Empleo Estatal):** buscadores de cursos online y presenciales a nivel nacional.\n• **Continuar estudiando:** modalidades a distancia, programas de alfabetización y obtención de titulaciones básicas.\n• **Homologación de títulos extranjeros:** si ya estudiaste en tu país, puedes solicitar el reconocimiento oficial en España. La oficina de empleo te orienta.",
+          source: "Guía Interactiva de Empleo para Migrantes en Andalucía — apartado 'Tu FORMACIÓN' (SAE / Junta de Andalucía)"
+        },
+        {
+          q: "¿Cómo me inscribo como demandante de empleo en el SAE?",
+          keywords: ["sae", "demandante", "inscribir", "darse de alta", "oficina empleo"],
+          a: "Puedes hacerlo en línea con **SAE Online**, que permite inscribirte como demandante de empleo, consultar ofertas o descargar la app del SAE. Si tienes dudas, pide cita en la oficina del SAE más cercana. El SAE también desarrolla **Proyectos Integrales para la Inserción**, **Programas de Empleo y Formación**, la **Red Andalucía Orienta** y prácticas en empresas (EPES). Para menores de 30 años existe la **Garantía Juvenil**.",
+          source: "Guía Interactiva de Empleo para Migrantes en Andalucía — apartado 'Tu acceso al EMPLEO'"
+        },
+        {
+          q: "¿Puedo acreditar la experiencia laboral que ya tengo aunque no tenga títulos?",
+          keywords: ["acreditacion", "competencias", "experiencia", "titulo", "certificado profesionalidad"],
+          a: "Sí. Existe el procedimiento de **Acreditación de Competencias Profesionales**, que reconoce oficialmente los conocimientos adquiridos por experiencia laboral o formación no formal. La acreditación es válida en toda España y permite obtener un certificado de profesionalidad. Pregunta en tu oficina del SAE por las convocatorias abiertas.",
+          source: "Guía Interactiva de Empleo para Migrantes en Andalucía — Acreditación de competencias profesionales"
+        },
+        {
+          q: "Quiero trabajar por mi cuenta o montar un negocio, ¿cómo lo hago?",
+          keywords: ["autonomo", "autoempleo", "negocio", "emprender", "cade"],
+          a: "Para emprender en Andalucía necesitas tramitar la **autorización inicial de residencia y trabajo por cuenta propia**. Los **Centros Andaluces de Emprendimiento (CADE)** te asesoran gratuitamente y te ayudan a preparar el proyecto. Los **Puntos de Atención al Emprendedor (PAE)** informan sobre los procedimientos de alta como autónomo/a y ofrecen tramitación telemática. Existen **subvenciones y bonificaciones** para autónomos: los CADE te orientan sobre las ayudas disponibles. Algunos servicios son gratuitos y otros requieren pago de tasas.",
+          source: "Guía Interactiva de Empleo para Migrantes en Andalucía — Autoempleo / CADE / PAE"
+        },
+        {
+          q: "¿Qué es el arraigo y qué tipos hay para regularizar mi situación?",
+          keywords: ["arraigo", "regularizar", "social", "laboral", "familiar", "sociolaboral", "sociolormativo", "segunda oportunidad"],
+          a: "El **arraigo** es una autorización excepcional de residencia para personas en situación irregular. Requisitos generales: estar en España, no tener protección internacional pendiente, residir al menos 2 años (excepto el familiar), carecer de antecedentes penales, pagar la tasa y solicitar la TIE en el plazo de un mes. Tipos:\n\n• **Arraigo familiar:** 5 años, para progenitores/tutores de menores UE/EEE/Suiza o familiares de personas UE con discapacidad. NO exige residencia previa.\n• **Arraigo sociolaboral:** se concede a quienes acreditan integración social y un contrato/relación laboral.\n• **Arraigo social:** para quienes acreditan integración y vínculos familiares.\n• **Arraigo sociolaborativo (sociolormativo):** 1 año (ampliable a 4) tras 2 años en España, comprometiéndose a hacer formación oficial. Permite trabajar hasta 30 h/semana. Requiere informe de integración social.\n• **Arraigo de segunda oportunidad:** para quienes han residido al menos 2 años en España y cotizado 6 meses, y no han renovado una autorización no excepcional. También aplica a solicitantes de asilo que cumplan condiciones.",
+          source: "Guía Interactiva de Empleo para Migrantes en Andalucía — Trámites de interés / Arraigos"
+        },
+        {
+          q: "¿Existe un visado para venir a buscar trabajo a España?",
+          keywords: ["visado", "buscar trabajo", "visa", "venir", "12 meses"],
+          a: "Sí. El **visado para la búsqueda de empleo** autoriza a trasladarse a España para buscar trabajo durante 12 meses. Los requisitos son similares a los de residencia y a los de contratación en origen. Hay dos modalidades: para descendientes de españoles y para ocupaciones de difícil cobertura. Una vez obtengas un contrato, la empresa debe solicitar tu autorización de residencia y trabajo. Para que el visado surta efecto debes inscribirte en la Seguridad Social en el plazo de un mes.",
+          source: "Guía Interactiva de Empleo para Migrantes en Andalucía — Visado para la búsqueda de empleo"
+        },
+        {
+          q: "¿Puedo traer a mi familia a España (reagrupación familiar)?",
+          keywords: ["reagrupacion", "familia", "traer", "conyuge", "hijos", "familiar"],
+          a: "Sí. Puedes reagrupar a tu **cónyuge o pareja de hecho, hijos menores o ascendientes** si dispones de residencia legal, vivienda adecuada y recursos económicos. Debes haber residido legalmente al menos un año. Las personas reagrupadas pueden trabajar sin necesidad de otro permiso y, posteriormente, pueden obtener autorización propia.\n\nOtra vía: **residencia para familiares de personas con nacionalidad española**. Concede 5 años de residencia y trabajo a familiares extracomunitarios de españoles o de la UE/EEE que conviven con ellos. NO exige tiempo previo de residencia y, una vez concedida, se puede obtener autorización independiente.",
+          source: "Guía Interactiva de Empleo para Migrantes en Andalucía — Reúne a tu familia"
+        },
+        {
+          q: "¿Cómo obtengo el certificado digital o Cl@ve para hacer trámites por internet?",
+          keywords: ["certificado digital", "clave", "cl@ve", "tramites online", "internet", "firma electronica"],
+          a: "Para hacer gestiones administrativas online necesitas identificarte digitalmente:\n\n• **Certificado electrónico/digital:** sirve para empadronamiento, vida laboral, prestaciones, reclamaciones. Lo solicitas por internet y luego acudes a una oficina a acreditar tu identidad. Si tienes autorización, dispones de un mes para solicitar la TIE.\n• **Cl@ve Permanente:** combina usuario y contraseña para acceder a la Administración pública.\n• **Cl@ve PIN:** genera una contraseña temporal que llega a tu teléfono y es válida durante 24 horas.",
+          source: "Guía Interactiva de Empleo para Migrantes en Andalucía — Tramitación online"
+        },
+        {
+          q: "¿Puedo venir a estudiar a España (estancia por estudios)?",
+          keywords: ["estudios", "estudiar", "universidad", "estancia", "estudiante"],
+          a: "Sí. La **estancia por estudios** autoriza a extranjeros no comunitarios a realizar estudios o investigaciones de más de 90 días en centros oficiales (universitarios, posgrado, certificaciones profesionales, intercambios, voluntariado). Se otorga por la duración del programa y puede extenderse a familiares. La solicitud puede presentarse hasta dos meses antes del inicio. El permiso permite **trabajar a tiempo parcial**; la oficina de empleo te asesora sobre los límites y requisitos.",
+          source: "Guía Interactiva de Empleo para Migrantes en Andalucía — Estancia por estudios"
         }
       ]
     },
