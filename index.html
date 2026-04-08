@@ -5,25 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#6a1b9a" />
 <title>Apoyo · Asistente para víctimas de trata</title>
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23e91e63' d='M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z'/></svg>" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <div id="google_translate_element" aria-hidden="true"></div>
 
 <header class="topbar">
-  <div class="brand">
-    <span class="logo" aria-hidden="true">❤</span>
-    <div>
+  <button id="home-btn" class="brand" title="Volver al inicio (en español)">
+    <span class="logo" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#fff" d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z"/></svg>
+    </span>
+    <div class="brand-text">
       <h1>Apoyo</h1>
       <p class="tagline">Asistente confidencial · Información y recursos</p>
     </div>
+  </button>
+  <div class="topbar-right">
+    <button id="lang-btn" class="lang-btn" title="Cambiar idioma / Change language">🌐 <span id="lang-current">Español</span></button>
+    <img id="eu-flag" src="eu.png" alt="Unión Europea" class="eu-flag" onerror="this.style.display='none'" />
   </div>
-  <button id="lang-btn" class="lang-btn" title="Cambiar idioma / Change language">🌐 <span id="lang-current">Español</span></button>
 </header>
 
 <main id="app">
   <!-- Language selection screen -->
-  <section id="screen-lang" class="screen active" aria-labelledby="lang-title">
+  <section id="screen-lang" class="screen" aria-labelledby="lang-title">
     <h2 id="lang-title">Elige tu idioma · Choose your language</h2>
     <p class="muted">Toda la información que compartas es confidencial.</p>
     <div id="lang-grid" class="grid"></div>
@@ -34,9 +40,9 @@
   </section>
 
   <!-- Main menu -->
-  <section id="screen-menu" class="screen" aria-labelledby="menu-title">
+  <section id="screen-menu" class="screen active" aria-labelledby="menu-title">
     <h2 id="menu-title">¿En qué podemos ayudarte hoy?</h2>
-    <p class="muted">Elige un tema o escribe tu pregunta abajo.</p>
+    <p class="muted">Elige un tema o usa el chat libre para escribir tu pregunta.</p>
     <div id="menu-grid" class="grid cards"></div>
   </section>
 
@@ -45,6 +51,14 @@
     <button class="back" data-target="screen-menu">← Volver</button>
     <h2 id="sub-title"></h2>
     <div id="sub-grid" class="grid cards"></div>
+  </section>
+
+  <!-- Documentation -->
+  <section id="screen-docs" class="screen" aria-labelledby="docs-title">
+    <button class="back" data-target="screen-menu">← Volver</button>
+    <h2 id="docs-title">📚 Documentación</h2>
+    <p class="muted">Toda la documentación de referencia, clasificada por temática. Puedes abrir o descargar cada documento.</p>
+    <div id="docs-list"></div>
   </section>
 
   <!-- Chat -->
@@ -81,6 +95,7 @@ function googleTranslateElementInit() {
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 
 <script src="data/kb.js"></script>
+<script src="data/docs.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

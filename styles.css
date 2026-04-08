@@ -34,11 +34,24 @@ body { top: 0 !important; }
   gap: 12px;
   box-shadow: var(--shadow);
 }
-.brand { display: flex; align-items: center; gap: 12px; }
+.brand {
+  display: flex; align-items: center; gap: 12px;
+  background: none; border: none; color: inherit;
+  cursor: pointer; padding: 0; text-align: left;
+  font: inherit;
+}
+.brand:hover .logo { transform: scale(1.08); }
+.brand-text { display: flex; flex-direction: column; }
+.topbar-right { display: flex; align-items: center; gap: 10px; }
+.eu-flag {
+  height: 28px; width: auto; border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.25);
+}
 .logo {
   background: rgba(255,255,255,.18);
   width: 40px; height: 40px; border-radius: 50%;
   display: grid; place-items: center; font-size: 20px;
+  transition: transform .15s ease;
 }
 .topbar h1 { margin: 0; font-size: 1.15rem; }
 .tagline { margin: 0; font-size: .78rem; opacity: .9; }
@@ -187,6 +200,45 @@ h2 { color: var(--primary-dark); margin-top: 8px; }
   background: #fff;
 }
 .footer strong { color: var(--accent); }
+
+/* Documentation list */
+.doc-cat { margin-top: 16px; }
+.doc-cat h3 {
+  color: var(--primary-dark);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+.doc-cat ul { list-style: none; padding: 0; margin: 0; }
+.doc-cat li {
+  padding: 10px 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin-bottom: 6px;
+  display: flex; align-items: center; gap: 10px;
+  box-shadow: var(--shadow);
+}
+.doc-cat li a {
+  flex: 1;
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-size: .92rem;
+}
+.doc-cat li a:hover { text-decoration: underline; }
+.doc-cat li .pdf-icon { font-size: 1.3rem; }
+
+/* Chat typing indicator */
+.typing { display: inline-block; }
+.typing span {
+  display: inline-block; width: 6px; height: 6px;
+  margin: 0 1px; background: var(--primary); border-radius: 50%;
+  animation: blink 1.2s infinite;
+}
+.typing span:nth-child(2) { animation-delay: .2s; }
+.typing span:nth-child(3) { animation-delay: .4s; }
+@keyframes blink { 0%, 60%, 100% { opacity: .3; } 30% { opacity: 1; } }
 
 @media (max-width: 480px) {
   .topbar h1 { font-size: 1rem; }

@@ -1,0 +1,105 @@
+[Lugar], [fecha]
+
+A la atención de:
+[Nombre del centro / entidad]
+[Dirección postal]
+
+Asunto: Invitación a colaborar en el proyecto "Apoyo" — asistente virtual
+multilingüe para víctimas de trata y explotación sexual.
+
+Estimadas compañeras, estimados compañeros:
+
+Me dirijo a ustedes desde la Universidad Pablo de Olavide (Sevilla), en el marco
+de un estudio aplicado sobre el acceso a derechos, recursos sociales y rutas de
+salida para personas víctimas y supervivientes de trata de seres humanos con
+fines de explotación sexual, especialmente mujeres migrantes en situación de
+vulnerabilidad.
+
+Como primer resultado tangible del estudio hemos desarrollado "Apoyo"
+(https://upocuantitativo.github.io/apoyo/ — repositorio público en
+https://github.com/upocuantitativo/apoyo), un asistente virtual gratuito,
+confidencial y multidispositivo que:
+
+  • Ofrece información clasificada por problemáticas (empadronamiento,
+    regularización, vivienda, salud mental, empleo, tecnología, detección,
+    desinformación) basada exclusivamente en documentación pública verificada
+    y citada en cada respuesta.
+  • Está disponible en más de 35 idiomas, incluyendo lenguas minoritarias de
+    países de origen frecuentes (suajili, wolof, hausa, yoruba, igbo, zulú,
+    amárico, somalí, tigriña, kinyarwanda, lingala, bambara, fulfulde, etc.).
+  • Permite escalar cualquier consulta no resuelta a una persona especialista
+    de referencia, conservando la trazabilidad de la conversación.
+  • Incorpora un modelo de lenguaje (LLM) de calidad para mantener
+    conversaciones empáticas, sin juicio, en el idioma de la persona usuaria.
+
+Por qué les escribimos
+----------------------
+
+Para que el proyecto sea verdaderamente útil necesitamos su conocimiento de
+campo. Nos gustaría invitar a su entidad a participar en el estudio en alguna
+(o varias) de las siguientes formas, todas ellas voluntarias y sin coste:
+
+  1. Validación de contenidos: revisar las respuestas que ofrece el asistente
+     en el área de su especialidad y proponer correcciones, matices o
+     ampliaciones.
+  2. Aportación documental: compartir guías, protocolos, infografías o enlaces
+     institucionales que consideren imprescindibles y que aún no estén
+     incluidos.
+  3. Pruebas de uso con personas usuarias: facilitar (siempre con
+     consentimiento informado y de forma anónima) que personas atendidas por
+     su entidad utilicen el asistente y nos devuelvan impresiones cualitativas.
+  4. Entrevistas breves a profesionales: 30-45 minutos, presenciales o por
+     videollamada, sobre barreras detectadas y necesidades no cubiertas.
+  5. Carta de apoyo institucional al proyecto, que nos permita acreditar la
+     red de colaboración ante futuras convocatorias.
+
+Hacia dónde queremos ir
+-----------------------
+
+El objetivo a medio plazo es presentar "Apoyo" a una convocatoria de la Unión
+Europea (líneas de financiación CERV — Citizens, Equality, Rights and Values; AMIF
+— Asylum, Migration and Integration Fund; o el programa Daphne dentro de CERV)
+para consolidar el proyecto y dar el salto a una versión avanzada que incluya:
+
+  • Asistente virtual robusto, con un modelo de lenguaje seguro y auditado,
+    alojado en infraestructura europea conforme al RGPD y al AI Act.
+  • Conexión directa (vía API) con los organismos de apoyo correspondientes:
+    Servicios Sociales Comunitarios, Servicio Andaluz de Empleo (SAE), oficinas
+    de extranjería, sistema sanitario público, entidades especializadas
+    (Proyecto Esperanza, APRAMP, Diaconía, Sevilla Acoge, Médicos del Mundo,
+    Cáritas, etc.) y línea 900 10 50 90.
+  • Sistema de derivación segura con consentimiento explícito y trazabilidad
+    auditable, que permita a la persona usuaria pedir cita o solicitar
+    acompañamiento sin tener que repetir su historia.
+  • Mediación cultural integrada y accesibilidad universal (lectura sencilla,
+    voz, soporte para personas con baja alfabetización).
+  • Panel de evaluación de impacto compartido con las entidades colaboradoras.
+
+Su participación en esta fase inicial será reconocida explícitamente como
+entidad colaboradora del estudio y, llegado el momento, como socia del
+consorcio que se constituya para concurrir a la convocatoria europea, con todo
+lo que ello implica en términos de visibilidad, intercambio de buenas prácticas
+y, en su caso, retorno económico para el trabajo aportado.
+
+Próximo paso
+------------
+
+Si esta propuesta encaja con la misión de su entidad, le agradeceríamos
+muchísimo que nos respondiera a este mismo correo indicando una persona de
+contacto y la modalidad de colaboración que les resulte más viable. Estaremos
+encantadas de concertar una reunión informativa breve, sin compromiso, en el
+formato que prefieran.
+
+Quedamos a su entera disposición para cualquier aclaración. Muchas gracias de
+antemano por su tiempo y por el trabajo imprescindible que realizan cada día.
+
+Reciban un saludo cordial,
+
+[Nombre y apellidos]
+[Cargo / grupo de investigación]
+Universidad Pablo de Olavide — Sevilla
+Correo: [correo institucional]
+Teléfono: [teléfono]
+Proyecto Apoyo: https://upocuantitativo.github.io/apoyo/
+Repositorio público: https://github.com/upocuantitativo/apoyo
+Contacto especialista del proyecto: especialista@sevilla.org
