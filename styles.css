@@ -245,9 +245,263 @@ h2 { color: var(--primary-dark); margin-top: 8px; }
 .typing span:nth-child(3) { animation-delay: .4s; }
 @keyframes blink { 0%, 60%, 100% { opacity: .3; } 30% { opacity: 1; } }
 
+/* ---------- Botón pánico ---------- */
+.panic-btn {
+  background: #c62828;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.5);
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: .85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.panic-btn:hover { background: #b71c1c; }
+.panic-btn:focus { outline: 3px solid #ffeb3b; }
+
+/* ---------- Consentimiento ---------- */
+.consent-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  max-width: 640px;
+  margin: 24px auto;
+}
+.consent-list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 20px;
+}
+.consent-list li {
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: .95rem;
+}
+.consent-list li:last-child { border-bottom: none; }
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-secondary {
+  background: #fff;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 12px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* ---------- Borrar turno ---------- */
+.msg { position: relative; align-items: flex-start; }
+.turn-del {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: .9rem;
+  padding: 0 6px;
+  opacity: 0;
+  transition: opacity .15s;
+  align-self: center;
+}
+.msg:hover .turn-del { opacity: .6; }
+.turn-del:hover { opacity: 1 !important; color: var(--accent); }
+
+/* ---------- Recursos por país ---------- */
+.resources-list {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  margin-top: 14px;
+}
+.country-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: var(--shadow);
+}
+.country-card h3 {
+  margin: 0 0 8px;
+  color: var(--primary-dark);
+  font-size: 1.1rem;
+}
+.country-card .emergency-line { margin: 6px 0; font-size: .92rem; }
+.country-card .trafficking-line {
+  margin: 8px 0;
+  padding: 8px 10px;
+  background: #fce4ec;
+  border-radius: 8px;
+  font-size: .9rem;
+}
+.country-card .trafficking-line .ribbon {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: .72rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.country-card .authority { font-size: .85rem; color: var(--muted); margin: 6px 0; }
+.country-card details { margin-top: 8px; }
+.country-card summary { cursor: pointer; color: var(--primary); font-size: .9rem; }
+.country-card ul { margin: 8px 0 0; padding-left: 20px; font-size: .9rem; }
+.country-card.transnational { background: #f3e5f5; }
+
+/* ---------- Modo profesional ---------- */
+.card-pro {
+  background: linear-gradient(135deg, #e3f2fd, #f1f8e9);
+  border-color: #1976d2;
+}
+.card-pro strong { color: #0d47a1; }
+
+.pro-gate-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+  max-width: 480px;
+  margin: 24px auto;
+  text-align: center;
+}
+.pro-gate-card input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 1px;
+  margin: 12px 0;
+}
+.pro-gate-card .error {
+  color: #c62828;
+  font-size: .9rem;
+  margin: 4px 0 12px;
+}
+.pro-gate-card .small { font-size: .78rem; margin-top: 14px; }
+
+.pro-section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-top: 14px;
+  box-shadow: var(--shadow);
+}
+.pro-section h3 {
+  color: var(--primary-dark);
+  margin-top: 0;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 6px;
+}
+.pro-section h4 { color: var(--primary); margin-bottom: 6px; }
+.pro-block { margin-bottom: 14px; }
+.pro-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: .92rem;
+  cursor: pointer;
+}
+.pro-check input { margin-top: 4px; }
+.pro-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+  margin-top: 10px;
+}
+.pro-table th, .pro-table td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+.pro-table th { background: #f3eef7; color: var(--primary-dark); }
+
+/* ---------- Modal de escalado ---------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+  padding: 16px;
+}
+.modal[hidden] { display: none; }
+.modal-card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 22px;
+  max-width: 560px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,.3);
+}
+.modal-card h2 { margin-top: 0; color: var(--primary-dark); }
+.field {
+  display: block;
+  margin: 12px 0;
+}
+.field > span {
+  display: block;
+  font-size: .82rem;
+  color: var(--muted);
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+.field textarea,
+.field .readonly {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font: inherit;
+  font-size: .92rem;
+  background: #fff;
+  box-sizing: border-box;
+}
+.field .readonly {
+  background: #f6f3f8;
+  color: var(--muted);
+  min-height: 1.4em;
+}
+.checkbox-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 14px 0 6px;
+  font-size: .9rem;
+}
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
 @media (max-width: 480px) {
   .topbar h1 { font-size: 1rem; }
   .tagline { display: none; }
   main { padding: 12px; }
   .chat { min-height: 260px; }
+  .panic-btn { font-size: .78rem; padding: 6px 10px; }
+  .topbar-right .eu-flag { display: none; }
 }

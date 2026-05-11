@@ -22,13 +22,29 @@
     </div>
   </button>
   <div class="topbar-right">
+    <button id="panic-btn" class="panic-btn" title="Salir rápido (Esc Esc Esc)">🚪 Salir rápido</button>
     <button id="lang-btn" class="lang-btn" title="Cambiar idioma / Change language">🌐 <span id="lang-current">Español</span></button>
     <img id="eu-flag" src="eu.png" alt="Unión Europea" class="eu-flag" onerror="this.style.display='none'" />
   </div>
 </header>
 
 <main id="app">
-  <!-- Language selection screen -->
+  <!-- Consentimiento -->
+  <section id="screen-consent" class="screen" aria-labelledby="consent-title">
+    <div class="consent-card">
+      <h2 id="consent-title">Antes de empezar</h2>
+      <ul class="consent-list">
+        <li>🤝 <strong>Confidencial.</strong> No te pedimos tu nombre, tu DNI ni tu dirección.</li>
+        <li>💾 <strong>No guardamos nada en nuestros servidores.</strong> Lo que escribas vive solo en tu navegador.</li>
+        <li>🤖 <strong>Las respuestas las genera un asistente de inteligencia artificial.</strong> Pueden contener errores. Para decisiones importantes habla con un/a profesional.</li>
+        <li>🚪 <strong>Botón «Salir rápido»</strong> arriba: borra la conversación y te lleva a otra web. También puedes pulsar Esc tres veces.</li>
+        <li>📞 <strong>Emergencias: 112.</strong> Línea anónima contra la trata 24h: <strong>900 10 50 90</strong>.</li>
+      </ul>
+      <button id="consent-accept" class="btn-primary">Entendido, continuar</button>
+    </div>
+  </section>
+
+  <!-- Selección de idioma -->
   <section id="screen-lang" class="screen" aria-labelledby="lang-title">
     <h2 id="lang-title">Elige tu idioma · Choose your language</h2>
     <p class="muted">Toda la información que compartas es confidencial.</p>
@@ -39,26 +55,55 @@
     </details>
   </section>
 
-  <!-- Main menu -->
-  <section id="screen-menu" class="screen active" aria-labelledby="menu-title">
+  <!-- Menú principal -->
+  <section id="screen-menu" class="screen" aria-labelledby="menu-title">
     <h2 id="menu-title">¿En qué podemos ayudarte hoy?</h2>
     <p class="muted">Elige un tema o usa el chat libre para escribir tu pregunta.</p>
     <div id="menu-grid" class="grid cards"></div>
   </section>
 
-  <!-- Subtopic menu -->
+  <!-- Submenú por categoría -->
   <section id="screen-sub" class="screen" aria-labelledby="sub-title">
     <button class="back" data-target="screen-menu">← Volver</button>
     <h2 id="sub-title"></h2>
     <div id="sub-grid" class="grid cards"></div>
   </section>
 
-  <!-- Documentation -->
+  <!-- Documentación -->
   <section id="screen-docs" class="screen" aria-labelledby="docs-title">
     <button class="back" data-target="screen-menu">← Volver</button>
     <h2 id="docs-title">📚 Documentación</h2>
     <p class="muted">Toda la documentación de referencia, clasificada por temática. Puedes abrir o descargar cada documento.</p>
     <div id="docs-list"></div>
+  </section>
+
+  <!-- Recursos por país -->
+  <section id="screen-resources" class="screen" aria-labelledby="resources-title">
+    <button class="back" data-target="screen-menu">← Volver</button>
+    <h2 id="resources-title">🗺️ Recursos por país</h2>
+    <p class="muted">Líneas de ayuda oficiales, autoridades y entidades especializadas en países UE. Las líneas suelen ser <strong>gratuitas, anónimas y 24h</strong>.</p>
+    <div id="resources-list" class="resources-list"></div>
+  </section>
+
+  <!-- Modo profesional: gate -->
+  <section id="screen-pro-gate" class="screen" aria-labelledby="pro-gate-title">
+    <button class="back" data-target="screen-menu">← Volver</button>
+    <div class="pro-gate-card">
+      <h2 id="pro-gate-title">🧑‍⚕️ Modo profesional</h2>
+      <p>Esta zona está pensada para personas que trabajan asistiendo a víctimas y supervivientes: trabajo social, sanitario, fuerzas y cuerpos de seguridad y ONGs.</p>
+      <p class="muted">Introduce la palabra clave que te han facilitado.</p>
+      <input id="pro-pass-input" type="password" autocomplete="off" placeholder="Palabra clave" />
+      <p id="pro-pass-error" class="error" hidden>Palabra clave incorrecta.</p>
+      <button id="pro-pass-submit" class="btn-primary">Entrar</button>
+      <p class="muted small">Esta verificación es solo una barrera de fricción para evitar accesos accidentales por parte de víctimas. No es un mecanismo de seguridad criptográfica.</p>
+    </div>
+  </section>
+
+  <!-- Modo profesional: contenido -->
+  <section id="screen-pro" class="screen" aria-labelledby="pro-title">
+    <button class="back" data-target="screen-menu">← Volver al menú</button>
+    <h2 id="pro-title">🧑‍⚕️ Modo profesional · Frontline</h2>
+    <div id="pro-content"></div>
   </section>
 
   <!-- Chat -->
@@ -77,12 +122,34 @@
   </section>
 </main>
 
+<!-- Modal de escalado (revisión antes del envío) -->
+<div id="esc-modal" class="modal" hidden role="dialog" aria-labelledby="esc-modal-title">
+  <div class="modal-card">
+    <h2 id="esc-modal-title">Revisa antes de enviar</h2>
+    <p class="muted">Vas a abrir tu cliente de correo con un resumen. Tú decides qué envías y qué quitas. Tus datos personales (nombre, dirección) <strong>no</strong> se incluyen.</p>
+
+    <label class="field"><span>Temas detectados</span><div id="esc-topics" class="readonly">—</div></label>
+    <label class="field"><span>Estadísticas</span><div id="esc-counts" class="readonly">—</div></label>
+    <label class="field"><span>Primera consulta (edítala si quieres)</span><textarea id="esc-first" rows="2"></textarea></label>
+    <label class="field"><span>Última consulta</span><textarea id="esc-last" rows="2"></textarea></label>
+    <label class="field"><span>Si quieres añadir algo</span><textarea id="esc-extra" rows="3" placeholder="Cuéntale al especialista lo que sea importante. No incluyas datos personales si no quieres."></textarea></label>
+    <label class="checkbox-row">
+      <input type="checkbox" id="esc-include-full" />
+      <span>Incluir el historial completo de la conversación (no recomendado si has compartido datos sensibles).</span>
+    </label>
+    <div class="modal-actions">
+      <button id="esc-cancel" class="btn-secondary">Cancelar</button>
+      <button id="esc-confirm" class="btn-primary">Abrir cliente de correo</button>
+    </div>
+  </div>
+</div>
+
 <footer class="footer">
   <small>Información basada en documentación pública. Esta herramienta no sustituye el asesoramiento profesional.
   Si estás en peligro inmediato llama al <strong>112</strong>. Trata de personas: <strong>900 10 50 90</strong> (24h, gratuito y anónimo).</small>
 </footer>
 
-<!-- Google Translate (free, no API key) -->
+<!-- Google Translate (gratis, sin API key) -->
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
@@ -96,6 +163,9 @@ function googleTranslateElementInit() {
 
 <script src="data/kb.js"></script>
 <script src="data/docs.js"></script>
+<script src="data/triage.js"></script>
+<script src="data/resources.js"></script>
+<script src="data/professional.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
